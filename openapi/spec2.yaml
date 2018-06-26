@@ -223,6 +223,8 @@ definitions:
         description: Field names that need to be provided for the account to remain
           in good standing. Nested fields are separated by `.` (for example, `legal_entity.first_name`).
         type: array
+        items:
+            type: string
     required:
     - fields_needed
     title: AccountVerification
@@ -648,11 +650,15 @@ definitions:
           balance for each currency and payment type can be found in the `source_types`
           property.
         type: array
+        items:
+          type: string
       connect_reserved:
         description: Funds held due to negative balances on connected Custom accounts.
           The connect reserve balance for each currency and payment type can be found
           in the `source_types` property.
         type: array
+        items:
+          type: string
       livemode:
         description: Has the value `true` if the object exists in live mode or the
           value `false` if the object exists in test mode.
@@ -668,6 +674,8 @@ definitions:
           rolling pay cycle. The pending balance for each currency, and for each payment
           type, can be found in the `source_types` property.
         type: array
+        items:
+          type: string
     required:
     - available
     - livemode
@@ -4327,6 +4335,8 @@ definitions:
       deactivate_on:
         description: An array of connect application identifiers that cannot purchase
           this product. Only applicable to products of `type=good`.
+        items:
+          type: string
         type: array
       description:
         description: The product's description, meant to be displayable to the customer.
@@ -7019,6 +7029,8 @@ paths:
         name: expand
         required: false
         type: array
+        items:
+          type: string
       - description: The identifier of the 3D Secure object to be retrieved.
         in: path
         name: three_d_secure
@@ -7071,6 +7083,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the account to retrieve. If none is provided,
           the account associated with the API key is returned.
@@ -7530,6 +7544,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: id
@@ -7618,6 +7634,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: A cursor for use in pagination. `ending_before` is an object
           ID that defines your place in the list. For instance, if you make a list
@@ -7747,6 +7765,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: id
@@ -7907,6 +7927,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: A cursor for use in pagination. `ending_before` is an object
           ID that defines your place in the list. For instance, if you make a list
@@ -8375,6 +8397,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the account to retrieve. If none is provided,
           the account associated with the API key is returned.
@@ -8844,6 +8868,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: account
@@ -8940,6 +8966,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: account
@@ -9081,6 +9109,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: account
@@ -9288,6 +9318,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: query
         name: domain_name
@@ -9407,6 +9439,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: domain
@@ -9432,6 +9466,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: Only return application fees for the charge specified by this
           charge ID.
@@ -9512,6 +9548,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: ID of the application fee refunded.
         in: path
@@ -9587,6 +9625,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the fee to be retrieved.
         in: path
@@ -9649,6 +9689,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: A cursor for use in pagination. `ending_before` is an object
           ID that defines your place in the list. For instance, if you make a list
@@ -9759,6 +9801,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       responses:
         '200':
@@ -9781,6 +9825,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: query
         name: available_on
@@ -9880,6 +9926,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The ID of the desired balance transaction, as found on any API
           object that affects the balance (e.g., a charge or transfer).
@@ -9907,6 +9955,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: Filter for active receivers.
         in: query
@@ -9991,6 +10041,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: id
@@ -10015,6 +10067,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: Only return transactions for the customer specified by this customer
           ID.
@@ -10097,6 +10151,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: Only return transactions for the customer specified by this customer
           ID.
@@ -10179,6 +10235,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: query
         name: created
@@ -10469,6 +10527,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the charge to be retrieved.
         in: path
@@ -10668,6 +10728,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: charge
@@ -10874,6 +10936,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The ID of the charge whose refunds will be retrieved.
         in: path
@@ -10995,6 +11059,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: charge
@@ -11057,6 +11123,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: A cursor for use in pagination. `ending_before` is an object
           ID that defines your place in the list. For instance, if you make a list
@@ -11125,6 +11193,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: An ISO 3166-1 alpha-2 country code. Available country codes can
           be listed with the [List Country Specs](/docs/api#list_country_specs) endpoint.
@@ -11150,6 +11220,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: A filter on the list, based on the object `created` field. The
           value can be a string with an integer Unix timestamp, or it can be a dictionary
@@ -11336,6 +11408,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The ID of the desired coupon.
         in: path
@@ -11397,6 +11471,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: query
         name: created
@@ -11597,6 +11673,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the customer to be retrieved.
         in: path
@@ -11740,6 +11818,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The ID of the customer whose bank accounts will be retrieved.
         in: path
@@ -11884,6 +11964,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: customer
@@ -12052,6 +12134,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The ID of the customer whose cards will be retrieved.
         in: path
@@ -12194,6 +12278,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: customer
@@ -12335,6 +12421,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: customer
@@ -12358,6 +12446,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The ID of the customer whose sources will be retrieved.
         in: path
@@ -12505,6 +12595,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: customer
@@ -12675,6 +12767,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The ID of the customer whose subscriptions will be retrieved.
         in: path
@@ -12927,6 +13021,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: customer
@@ -13127,6 +13223,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: customer
@@ -13154,6 +13252,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: query
         name: created
@@ -13226,6 +13326,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: ID of dispute to retrieve.
         in: path
@@ -13443,6 +13545,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: query
         name: created
@@ -13530,6 +13634,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the event to be retrieved.
         in: path
@@ -13586,6 +13692,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: A cursor for use in pagination. `ending_before` is the currency
           that defines your place in the list. For instance, if you make a list request
@@ -13656,6 +13764,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html),
           in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
@@ -13683,6 +13793,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: query
         name: created
@@ -13812,6 +13924,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the file upload to be retrieved.
         in: path
@@ -13838,6 +13952,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: query
         name: created
@@ -14023,6 +14139,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The ID of the desired invoice item.
         in: path
@@ -14109,6 +14227,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The billing mode of the invoice to retrieve. Either `charge_automatically`
           or `send_invoice`.
@@ -14299,6 +14419,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The code of the coupon to apply. If `subscription` or `subscription_items`
           is provided, the invoice returned will preview updating or creating a subscription
@@ -14407,6 +14529,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The code of the coupon to apply. If `subscription` or `subscription_items`
           is provided, the invoice returned will preview updating or creating a subscription
@@ -14557,6 +14681,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the desired invoice.
         in: path
@@ -14663,6 +14789,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: A cursor for use in pagination. `ending_before` is an object
           ID that defines your place in the list. For instance, if you make a list
@@ -14780,6 +14908,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: Only return issuer fraud records for the charge specified by
           this charge ID.
@@ -14857,6 +14987,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the issuer fraud record to be retrieved.
         in: path
@@ -14882,6 +15014,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: Date this return was created.
         in: query
@@ -14962,6 +15096,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the order return to be retrieved.
         in: path
@@ -14987,6 +15123,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: Date this order was created.
         in: query
@@ -15195,6 +15333,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the order to be retrieved.
         in: path
@@ -15601,6 +15741,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: payment
@@ -15626,6 +15768,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: query
         name: arrival_date
@@ -15801,6 +15945,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the payout to be retrieved.
         in: path
@@ -15895,6 +16041,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: Only return plans that are active or inactive (e.g., pass `false`
           to list all inactive products).
@@ -16164,6 +16312,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The ID of the desired plan.
         in: path
@@ -16255,6 +16405,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: Only return products that are active or inactive (e.g., pass
           `false` to list all inactive products).
@@ -16505,6 +16657,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the product to be retrieved.
         in: path
@@ -16647,6 +16801,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: query
         name: created
@@ -16792,6 +16948,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the recipient to be retrieved.
         in: path
@@ -16865,6 +17023,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: Only return refunds for the charge specified by this charge ID.
         in: query
@@ -16983,6 +17143,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: ID of refund to retrieve.
         in: path
@@ -17046,6 +17208,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: Only return SKUs that are active or inactive (e.g., pass `false`
           to list all inactive products).
@@ -17271,6 +17435,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the SKU to be retrieved.
         in: path
@@ -17566,6 +17732,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The client secret of the source. Required if a publishable key
           is used to retrieve the source.
@@ -17697,6 +17865,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The ID of the Source MandateNotification.
         in: path
@@ -17726,6 +17896,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: A cursor for use in pagination. `ending_before` is an object
           ID that defines your place in the list. For instance, if you make a list
@@ -17802,6 +17974,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The ID of the source whose source transaction will be retrieved.
         in: path
@@ -17869,6 +18043,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: A cursor for use in pagination. `ending_before` is an object
           ID that defines your place in the list. For instance, if you make a list
@@ -18036,6 +18212,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the subscription item to retrieve.
         in: path
@@ -18165,6 +18343,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The billing mode of the subscriptions to retrieve. Either `charge_automatically`
           or `send_invoice`.
@@ -18436,6 +18616,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: path
         name: subscription_exposed_id
@@ -18626,6 +18808,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: A cursor for use in pagination. `ending_before` is an object
           ID that defines your place in the list. For instance, if you make a list
@@ -18760,6 +18944,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The ID of the desired tax rate template.
         in: path
@@ -19112,6 +19298,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The ID of the desired token.
         in: path
@@ -19136,6 +19324,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: A positive integer in %s representing how much to transfer.
         in: query
@@ -19278,6 +19468,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The ID of the topup to retrieve.
         in: path
@@ -19344,6 +19536,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - in: query
         name: created
@@ -19493,6 +19687,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: A cursor for use in pagination. `ending_before` is an object
           ID that defines your place in the list. For instance, if you make a list
@@ -19629,6 +19825,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: The identifier of the transfer to be retrieved.
         in: path
@@ -19694,6 +19892,8 @@ paths:
         in: query
         name: expand
         required: false
+        items:
+          type: string
         type: array
       - description: ID of reversal to retrieve.
         in: path
